@@ -1,3 +1,48 @@
-<h1>
-    Welcome...!
-</h1>
+<!DOCTYPE html>
+<html >
+
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+
+
+</head>
+
+<body>
+ <div class="login">
+	<h1>Chennai Housing Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+      <input type="text" name="AREA" placeholder="AREA" required="required" /><br>
+    	<input type="text" name="INT_SQFT" placeholder="INT_SQFT" required="required" /><br>
+        <input type="text" name="N_BEDROOM" placeholder="N_BEDROOM" required="required" /><br>
+        <input type="text" name="N_BATHROOM" placeholder="N_BATHROOM" required="required" /><br>
+        <input type="text" name="N_ROOM" placeholder="N_ROOM" required="required" /><br>
+        <input type="text" name="MZ_ZONE" placeholder="MZ_ZONE" required="required" /><br>
+        <input type="text" name="DATE_BUILD" placeholder="DATE_BUILD" required="required" /><br>
+        <input type="text" name="DATE_SALE" placeholder="DATE_SALE" required="required" /><br>
+        <input type="text" name="SALE_CONDITION" placeholder="SALE_CONDITION" required="required" /><br>
+        <input type="text" name="PARKING" placeholder="PARKING" required="required" /><br>
+        <input type="text" name="BUILDING_TYPE" placeholder="BUILDING_TYPE" required="required" /><br>
+        <input type="text" name="UTILITIES_AVAILABLE" placeholder="UTLLITIES_AVAILABLE" required="required" /><br>
+        <input type="text" name="STREET" placeholder="STREET" required="required" /><br>
+
+
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+
+
+ </div>
+ {{prediction_text}}
+
+</body>
+</html>
